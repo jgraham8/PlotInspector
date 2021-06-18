@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlotInspector.Views.Schemes">
+
+    <!--#region Colours -->
+    <Color x:Key="bg-layer1">#0492C2</Color>
+    <Color x:Key="bg-layer2">#FFFFFF</Color>
+    <Color x:Key="bg-layer3">#80001524</Color>
+
+    <Color x:Key="fg-pink-l">#FFA7B0</Color>
+    <Color x:Key="fg-blue-l">#A7DCFF</Color>
+    <Color x:Key="fg-green-l">#47CF73</Color>
+    <Color x:Key="fg-red-l">#FF1A1A</Color>
+
+    <Color x:Key="darktext">Black</Color>
+    <Color x:Key="lighttext">#EBF2FA</Color>
+    <!--#endregion-->
+
+    <!--#Element Formatting --> 
+    <Style TargetType="StackLayout" x:Key="Background">
+        <Setter Property="BackgroundColor" Value="{StaticResource bg-layer1}"/>
+    </Style>
+
+    <Style TargetType="Frame" x:Key="Header">
+        <Setter Property="BackgroundColor" Value="{StaticResource bg-layer2}"/>
+        <Setter Property="Padding" Value="24"/>
+        <Setter Property="CornerRadius" Value="0"/>
+    </Style>
+
+    <Style TargetType="Editor" x:Key="BaseEditor">
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="MaxLength" Value="500"/>
+        <Setter Property="MinimumWidthRequest" Value="100"/>
+        <Setter Property="FontSize" Value="Micro"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="PlaceholderColor" Value="Black"/>
+        <Setter Property="AutoSize" Value="TextChanges"/>
+    </Style>
+
+    <Style TargetType="Entry" x:Key="BaseEntry">
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="MaxLength" Value="500"/>
+        <Setter Property="MinimumWidthRequest" Value="100"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="PlaceholderColor" Value="Black"/>
+        <Setter Property="FontSize" Value="Small"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="BaseLabel">
+        <Setter Property="FontSize" Value="Medium"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="TextColor" Value="{StaticResource darktext}"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="HelpLabel" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="Small"/>
+    </Style>
+    
+    <Style TargetType="Label" x:Key="HeaderLabel" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="36"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="MainPerc" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="FontSize" Value="10"/>
+    </Style>
+
+    <Style TargetType="StackLayout" x:Key="ButtonGroup">
+        <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+    </Style>
+
+    <Style TargetType="StackLayout" x:Key="Summary">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+    </Style>
+
+    <Style TargetType="Grid" x:Key="BaseGrid">
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="ColumnDefinitions" Value="Auto"/>
+        <Setter Property="RowDefinitions" Value="Auto"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="SumLabel" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+    </Style>
+    <Style TargetType="Label" x:Key="SumLabel2" BasedOn="{StaticResource BaseLabel}">
+        <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="GeneralButton">
+        <Setter Property="TextColor" Value="{StaticResource lighttext}"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource fg-blue-l}"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="Margin" Value="20"/>
+        <Setter Property="BorderWidth" Value="1"/>
+        <Setter Property="BorderColor" Value="{StaticResource darktext}"/>
+        <Setter Property="TextColor" Value="{StaticResource darktext}"/>
+        <Setter Property="HeightRequest" Value="60"/>
+        <Setter Property="TextTransform" Value="Uppercase"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="Clear" BasedOn="{StaticResource GeneralButton}">
+        <Setter Property="WidthRequest" Value="110"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource fg-red-l}"/>
+        <Setter Property="Text" Value="Clear"/>
+
+    </Style>
+
+    <Style TargetType="Button" x:Key="Switch" BasedOn="{StaticResource GeneralButton}">
+        <Setter Property="WidthRequest" Value="110"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Text" Value="Switch Measurement"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="Calculate" BasedOn="{StaticResource GeneralButton}">
+        <Setter Property="BackgroundColor" Value="{StaticResource fg-green-l}"/>
+        <Setter Property="WidthRequest" Value="110"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Text" Value="Calculate"/>
+    </Style>
+    <!--#endregion -->
+
+</ResourceDictionary>

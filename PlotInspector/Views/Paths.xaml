@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="PlotInspector.Views.Paths">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="Schemes.xaml" />
+    </ContentPage.Resources>
+
+    <StackLayout Style="{StaticResource Background}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <Frame Style="{StaticResource Header}">
+            <Label Text="Shared Paths" Style="{StaticResource HeaderLabel}"/>
+        </Frame>
+
+        <StackLayout HorizontalOptions="FillAndExpand">
+            <Grid Style="{StaticResource BaseGrid}">
+                <StackLayout RadioButtonGroup.GroupName="PathSel" RadioButtonGroup.SelectedValue="{Binding PathSelection}"  Orientation="Horizontal" Grid.Row="0" HorizontalOptions="CenterAndExpand">
+                    <Label Style="{StaticResource BaseLabel}" Text="Poor" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Caption" VerticalTextAlignment="Center"/>
+                    <RadioButton Value="-1" Grid.Column="1"/>
+                    <RadioButton Value="0" Grid.Column="2" IsChecked="{Binding PARadioGroup}"/>
+                    <RadioButton Value="1" Grid.Column="3"/>
+                    <Label Style="{StaticResource BaseLabel}" Text="Good" Grid.Column="4" HorizontalTextAlignment="Center" FontSize="Caption" VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+
+        <xct:Expander HorizontalOptions="CenterAndExpand">
+            <xct:Expander.Header HorizontalOptions="CenterAndExpand">
+                <Grid HorizontalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Style="{StaticResource BaseLabel}" Text="Help" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="CenterAndExpand" Grid.Column="0"/>
+                    <Image Source="expander.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Grid.Column="1"/>
+                </Grid>
+            </xct:Expander.Header>
+            <ScrollView Grid.Column="1" VerticalOptions="FillAndExpand">
+                <Label Style="{StaticResource HelpLabel}" Grid.Column="1" Text="SHARED PATHS (I.E. paths between plots)&#10;&#10;Are the shared paths around the plot clear of weeds and overgrown bushes etc?" FontAttributes="Italic" HorizontalTextAlignment="Center" />
+            </ScrollView>
+        </xct:Expander>
+
+
+        <Button Style="{StaticResource Calculate}"  Command="{Binding NextPage}" Text="Next"/>
+
+    </StackLayout>
+</ContentPage>

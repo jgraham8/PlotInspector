@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="PlotInspector.Views.WeedControlPage">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="Schemes.xaml" />
+    </ContentPage.Resources>
+    <StackLayout Style="{StaticResource Background}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <Frame Style="{StaticResource Header}">
+            <Label Text="Weed Control" Style="{StaticResource HeaderLabel}"/>
+        </Frame>
+
+
+        <StackLayout HorizontalOptions="FillAndExpand">
+            <Grid Style="{StaticResource BaseGrid}">
+                <StackLayout RadioButtonGroup.GroupName="weedSel" RadioButtonGroup.SelectedValue="{Binding WeedSelection}"  Orientation="Horizontal" Grid.Row="0" HorizontalOptions="CenterAndExpand">
+                    <Label Style="{StaticResource BaseLabel}" Text="Out of&#10;Control" Grid.Column="0" HorizontalTextAlignment="Center" FontSize="Caption" VerticalTextAlignment="Center"/>
+                    <RadioButton Value="-1" Grid.Column="1" />
+                    <RadioButton Value="0" Grid.Column="2" IsChecked="{Binding WCRadioGroup}" />
+                    <RadioButton Value="1" Grid.Column="3"/>
+                    <Label Style="{StaticResource BaseLabel}" Text="Well&#10;Controlled" Grid.Column="4" HorizontalTextAlignment="Center" FontSize="Caption" VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+
+        <xct:Expander HorizontalOptions="CenterAndExpand">
+            <xct:Expander.Header HorizontalOptions="CenterAndExpand">
+                <Grid HorizontalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Style="{StaticResource BaseLabel}" Text="Help" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="CenterAndExpand" Grid.Column="0"/>
+                    <Image Source="expander.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Grid.Column="1"/>
+                </Grid>
+            </xct:Expander.Header>
+            <ScrollView Grid.Column="1" VerticalOptions="FillAndExpand">
+                <Label Style="{StaticResource HelpLabel}" Text="Are weeds under control in the plot? Especially mares-tail and bindweed, which pose a risk to neighbouring plots." FontAttributes="Italic" HorizontalTextAlignment="Center" />
+            </ScrollView>
+        </xct:Expander>
+
+        <Button Style="{StaticResource Calculate}"  Command="{Binding NextPage}" Text="Next"/>
+
+    </StackLayout>
+</ContentPage>

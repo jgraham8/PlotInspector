@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" PrivateAssets="All" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="19.1.0.69" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="19.1.0.69" />
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="19.1.0.69" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="19.1.0.69" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRating" Version="19.1.0.69" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.1.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\SummaryPage.xaml.cs">
+      <DependentUpon>SummaryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\OtherPage.xaml.cs">
+      <DependentUpon>OtherPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Paths.xaml.cs">
+      <DependentUpon>Paths.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Composting.xaml.cs">
+      <DependentUpon>Composting.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Boundaries.xaml.cs">
+      <DependentUpon>Boundaries.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\WeedControlPage.xaml.cs">
+      <DependentUpon>WeedControlPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Schemes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

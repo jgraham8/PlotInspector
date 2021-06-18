@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="PlotInspector.Views.SummaryPage">
+    <ContentPage.Resources>
+        <ResourceDictionary Source="Schemes.xaml" />
+    </ContentPage.Resources>
+
+    <StackLayout Style="{StaticResource Background}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <Frame Style="{StaticResource Header}">
+            <Label Text="Summary" Style="{StaticResource HeaderLabel}"/>
+        </Frame>
+             
+        <ScrollView>
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                <StackLayout Style="{StaticResource Summary}">
+                    <Label Style="{StaticResource SumLabel}" Text="Cultivation : "/>
+                    <Label Style="{StaticResource SumLabel2}" Text="{Binding CultivationScore}"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource Summary}">
+                    <Label Style="{StaticResource SumLabel}" Text="Weed Control : "/>
+                    <Label Style="{StaticResource SumLabel2}" Text="{Binding WeedSelection}"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource Summary}">
+                    <Label Style="{StaticResource SumLabel}" Text="Composting : "/>
+                    <Label Style="{StaticResource SumLabel2}" Text="{Binding CompSelection}"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource Summary}">
+                    <Label Style="{StaticResource SumLabel}" Text="Boundaries : "/>
+                    <Label Style="{StaticResource SumLabel2}" Text="{Binding BoundSelection}"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource Summary}">
+                    <Label Style="{StaticResource SumLabel}" Text="Shared Paths : "/>
+                    <Label Style="{StaticResource SumLabel2}" Text="{Binding PathSelection}"/>
+                </StackLayout>
+                <StackLayout Style="{StaticResource Summary}">
+                    <Label Style="{StaticResource SumLabel}" Text="Custom Score : "/>
+                    <Label Style="{StaticResource SumLabel2}" Text="{Binding CustomSelection}"/>
+                </StackLayout>
+
+                <ScrollView>
+                    <StackLayout>
+                        <Editor Text="{Binding CustomMessage}" IsReadOnly="True" Style="{StaticResource BaseEditor}"/>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </ScrollView>
+
+        <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+                <Label Style="{StaticResource BaseLabel}" Text="Total Score : "/>
+                <Label Style="{StaticResource BaseLabel}" Text="{Binding TotalScore}"/>
+            </StackLayout>
+
+            <Label Style="{StaticResource BaseLabel}" Text="{Binding Grade}" HorizontalOptions="Center" FontSize="Medium" TextColor="{Binding GradeColour}"/>
+        </StackLayout>
+
+        <Button Style="{StaticResource Clear}"  Command="{Binding NextPage}" Text="Restart"/>
+
+    </StackLayout>
+</ContentPage>
